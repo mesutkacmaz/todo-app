@@ -1,9 +1,13 @@
 const express = require('express')
 const config = require('./config')
+const loaders = require('./loaders')
+const errorHandler = require('./middlewares/errorHandler')
 
 config()
 
 const { todoRoutes } = require('./routes')
+
+loaders()
 
 const app = express()
 
@@ -15,4 +19,5 @@ app.listen(process.env.APP_PORT, () => {
   )
 
   app.use('/v1/todo-list', todoRoutes)
+  app.use(errorHandler)
 })
