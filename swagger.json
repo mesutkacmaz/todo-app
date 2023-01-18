@@ -299,6 +299,25 @@
               }
             }
           },
+          "400": {
+            "summary": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "default": "false"
+                    },
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "404": {
             "summary": "Not Found",
             "content": {

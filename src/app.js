@@ -26,3 +26,5 @@ app.listen(process.env.APP_PORT, () => {
   app.use('/v1/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
   app.use(errorHandler)
 })
+
+module.exports = app
